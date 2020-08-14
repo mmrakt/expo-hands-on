@@ -1,13 +1,8 @@
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
-import AppNavigator from './src/navigators/AppNavigator'
+import HelloScreen from './src/screens/HelloScreen'
 
-const App = (): JSX.Element => {
-  return (
-    <NavigationContainer>
-      <AppNavigator />
-    </NavigationContainer>
-  )
+const App = () => {
+  return <HelloScreen />
 }
 
 export default App
