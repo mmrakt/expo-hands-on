@@ -8,7 +8,7 @@ const HelloScreen = () => {
         ### レッスン1: 表示している文字を変えてみよう ###
         1. "Hello Expo!!!"の文字を好きなテキストに変えてみよう。
       */}
-      <Text style={styles.message}>Hello Expo!!!</Text>
+      <Text style={styles.message}>Hello Gorori Studio!!!</Text>
     </View>
   )
 }
