@@ -27,6 +27,7 @@ const HomeScreen = () => {
         1. TextInputコンポーネントを使い、テキストボックスを設置してみよう。
         styleは"input"を使おう。
       */}
+      <TextInput style={styles.input} multiline={true} value={text} onChangeText={setText} />
     </View>
   )
 }
