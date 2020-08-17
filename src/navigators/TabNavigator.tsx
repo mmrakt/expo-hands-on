@@ -2,8 +2,7 @@ import React from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createStackNavigator } from '@react-navigation/stack'
-import HelloScreen from '../screens/HelloScreen'
-// import HomeScreen from '../screens/HomeScreen'
+import HomeScreen from '../screens/HomeScreen'
 import UserScreen from '../screens/UserScreen'
 
 const Stack = createStackNavigator()
@@ -14,7 +13,7 @@ const HomeStackNavigator = () => (
   <Stack.Navigator initialRouteName="Main">
     <Stack.Screen
       name="Main"
-      component={HelloScreen}
+      component={HomeScreen}
       options={{
         headerTitle: 'ホーム',
         headerBackTitleVisible: false,
