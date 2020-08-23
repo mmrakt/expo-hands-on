@@ -4,11 +4,7 @@ import { View, Text, StyleSheet } from 'react-native'
 const HelloScreen = () => {
   return (
     <View style={styles.root}>
-      {/*
-        ### レッスン1: 表示している文字を変えてみよう ###
-        1. "Hello Expo!!!"の文字を好きなテキストに変えてみよう。
-      */}
-      <Text style={styles.message}>Hello Expo!!!</Text>
+      <Text style={styles.message}>android開けん！</Text>
     </View>
   )
 }
@@ -22,6 +18,7 @@ const styles = StyleSheet.create({
   },
   message: {
     textAlign: 'center',
+    fontSize: 100,
   },
 })
 

@@ -2,19 +2,17 @@ import React from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createStackNavigator } from '@react-navigation/stack'
-import HelloScreen from '../screens/HelloScreen'
-// import HomeScreen from '../screens/HomeScreen'
+// import HelloScreen from '../screens/HelloScreen'
+import HomeScreen from '../screens/HomeScreen'
 import UserScreen from '../screens/UserScreen'
 
 const Stack = createStackNavigator()
 
-// ### レッスン2: ホームスタックで表示する画面を変えよう ###
-// 1. "HelloScreen"ではなく、"HomeScreen"を表示するように変えてみよう。
 const HomeStackNavigator = () => (
-  <Stack.Navigator initialRouteName="Main">
+  <Stack.Navigator initialRouteName="Home">
     <Stack.Screen
-      name="Main"
-      component={HelloScreen}
+      name="Home"
+      component={HomeScreen}
       options={{
         headerTitle: 'ホーム',
         headerBackTitleVisible: false,
@@ -24,9 +22,9 @@ const HomeStackNavigator = () => (
 )
 
 const UserStackNavigator = () => (
-  <Stack.Navigator initialRouteName="Main">
+  <Stack.Navigator>
     <Stack.Screen
-      name="Main"
+      name="User"
       component={UserScreen}
       options={{
         headerTitle: 'ユーザー',

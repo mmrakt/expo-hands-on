@@ -2,31 +2,33 @@ import React, { useState, useCallback } from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
 
 const HomeScreen = () => {
-  // ### レッスン3: ツイートする内容を入力できるようにしよう ###
-  // 2. テキストボックスでの入力値をHooksで管理してみよう。
   const [text, setText] = useState<string>('')
+  const [tweetList, setTweetList] = useState<string[]>([])
 
   const onTweet = useCallback((text: string) => {
-    console.info(`tweet: ${text}`)
+    tweetList.push(text)
+    setTweetList(tweetList)
+    setText('')
+  }, [])
+
+  const deleteTweet = useCallback(() => {
+    setTweetList([])
   }, [])
 
   return (
     <View style={styles.root}>
       <View style={styles.actionBar}>
-        {/* 
-          ### レッスン4: ツイート内容をログに表示させてみよう ###
-          1. ボタンを押した時に、"onTweet"を実行するようにしてみよう。
-        */}
-        <TouchableOpacity style={styles.tweetButton}>
+        <TouchableOpacity style={styles.tweetButton} onPress={() => onTweet(text)}>
           <Text style={styles.tweetButtonText}>ツイートする</Text>
         </TouchableOpacity>
       </View>
 
-      {/*
-        ### レッスン3: ツイートする内容を入力できるようにしよう ###
-        1. TextInputコンポーネントを使い、テキストボックスを設置してみよう。
-        styleは"input"を使おう。
-      */}
+      <TextInput style={styles.input} multiline={true} value={text} onChangeText={setText} />
+      <View>
+        {tweetList.map((tweet) => {
+          return <Text key={tweet}>{tweet}</Text>
+        })}
+      </View>
     </View>
   )
 }
