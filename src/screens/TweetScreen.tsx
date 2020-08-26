@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
-import { Body, Card, CardItem } from 'native-base'
+import { Container, Header, Content, Card, CardItem } from 'native-base'
 
-const HomeScreen = () => {
+const TweetScreen = () => {
   const [text, setText] = useState<string>('')
   const [tweetList, setTweetList] = useState<string[]>([])
 
@@ -26,18 +26,11 @@ const HomeScreen = () => {
 
       <TextInput style={styles.input} multiline={true} value={text} onChangeText={setText} />
 
-      {tweetList.map((tweet, index) => {
-        return (
-          <Card key={index}>
-            <CardItem header></CardItem>
-            <CardItem cardBody>
-              <Body>
-                <Text>{tweet}</Text>
-              </Body>
-            </CardItem>
-          </Card>
-        )
-      })}
+      <Card>
+        {tweetList.map((tweet) => {
+          return <CardItem key={tweet}>{tweet}</CardItem>
+        })}
+      </Card>
     </View>
   )
 }
@@ -76,4 +69,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default HomeScreen
+export default TweetScreen
